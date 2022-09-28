@@ -5,7 +5,6 @@ import Footer from "./components/footer/Footer";
 import Header from "./components/header/Header";
 import Projects from "./components/projects/Projects";
 import Skills from "./components/skills/Skills";
-
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./components/Home/Home";
 
@@ -16,11 +15,13 @@ const App = () => {
         <Header />
 
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/skills" element={<Skills />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="">
+            <Route index element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/skills" element={<Skills />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/contact" element={<Contact />} />
+          </Route>
         </Routes>
         <Footer />
       </Router>
